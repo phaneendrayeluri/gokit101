@@ -32,5 +32,6 @@ func main() {
 		httpHandler = transport.NewHTTPHandler(endpoints, logger)
 	)
 
-	logger.Log("System Exit Reason", http.ListenAndServe(":8080", httpHandler))
+	logger.Log("accepting HTTP traffic on", ":8080")
+	logger.Log("system exit reason", http.ListenAndServe(":8080", httpHandler))
 }
