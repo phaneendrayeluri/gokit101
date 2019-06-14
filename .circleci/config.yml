@@ -22,7 +22,7 @@ workflow:
   feature-branch-only:
     jobs:
       - build
-      - whereami
+      - whereami:
           filters:
             branches: 
               ignore: /^(?!feature).*/
