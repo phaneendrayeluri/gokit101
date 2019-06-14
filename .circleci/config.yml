@@ -17,10 +17,10 @@ jobs:
       - image: circleci/golang:1.9
     steps:
       - pwd
-# workflow:
-#   feature-branch:
-#     jobs:
-#       filters:
-#         branches: 
-#           ignore: /^(?!feature).*/
+workflow:
+  feature-branch-only:
+    jobs:
+      filters:
+        branches: 
+          ignore: /^(?!feature).*/
 
