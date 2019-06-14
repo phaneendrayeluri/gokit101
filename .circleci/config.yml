@@ -12,10 +12,13 @@ jobs:
       - run: go get -v -t -d ./...
       - run: go test -v ./...
       - run: go build ./...
-workflow:
-  feature-branch:
-    jobs:
-      filters:
-        branches: 
-          only: feature/*
+  whereami:
+    steps:
+      - pwd
+# workflow:
+#   feature-branch:
+#     jobs:
+#       filters:
+#         branches: 
+#           ignore: /^(?!feature).*/
 
