@@ -11,9 +11,7 @@ jobs:
       - checkout
       - run: go get -v -t -d ./...
       - run: go test -v ./...
-      - run: pwd
-      - run: uname
-      - run: go build
+      - run: go build ./...
 workflow:
   feature-branch:
     jobs:
