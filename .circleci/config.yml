@@ -10,6 +10,10 @@ jobs:
     steps:
       - checkout
   test:    
+    docker:
+      - image: circleci/golang:1.9
+    working_directory: /go/src/github.com/phaneendrayeluri/gokit101
+    steps:
       - run: go get -v -t -d ./...
       - run: go test -v ./...
 workflows:
