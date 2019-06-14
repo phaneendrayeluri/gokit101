@@ -14,6 +14,7 @@ jobs:
       - image: circleci/golang:1.9
     working_directory: /go/src/github.com/phaneendrayeluri/gokit101
     steps:
+      - checkout
       - run: go get -v -t -d ./...
       - run: go test -v ./...
 workflows:
@@ -22,8 +23,6 @@ workflows:
     jobs:
       - build
       - test:
-          requires:
-            - build
           filters:
             branches: 
               ignore: /^(?!feature).*/
