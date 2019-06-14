@@ -9,23 +9,14 @@ jobs:
     working_directory: /go/src/github.com/phaneendrayeluri/gokit101
     steps:
       - checkout
+  test:    
       - run: go get -v -t -d ./...
       - run: go test -v ./...
-      - run: go build ./...
-  whereami:
-    docker:
-      - image: circleci/golang:1.9
-    steps:
-      - run: pwd
 workflows:
   version: 2
-  feature-branch-only:
+  build-test:
     jobs:
       - build
-      - whereami:
-          requires:
-            - build
           filters:
             branches: 
               ignore: /^(?!feature).*/
-
