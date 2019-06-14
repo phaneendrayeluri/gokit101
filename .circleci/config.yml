@@ -23,7 +23,7 @@ workflow:
     jobs:
       - build
       - whereami
-      filters:
-        branches: 
-          ignore: /^(?!feature).*/
+          filters:
+            branches: 
+              ignore: /^(?!feature).*/
 
