@@ -22,6 +22,8 @@ workflows:
     jobs:
       - build
       - test:
+          requires:
+            - build
           filters:
             branches: 
               ignore: /^(?!feature).*/
