@@ -11,14 +11,19 @@ jobs:
       - checkout
       - run: go get -v -t -d ./...
       - run: go test -v ./...
-      - run: pwd
-      - run: uname
-      - run: go build
+      - run: go build ./...
+  whereami:
+    docker:
+      - image: circleci/golang:1.9
+    steps:
+      - pwd
 workflow:
-  feature-branch:
+  version: 2
+  feature-branch-only:
     jobs:
-      filters:
-        branches: 
-          only: feature/*
-          
+      - build
+      - whereami:
+          filters:
+            branches: 
+              ignore: /^(?!feature).*/
 
