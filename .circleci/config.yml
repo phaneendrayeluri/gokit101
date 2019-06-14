@@ -18,6 +18,7 @@ jobs:
     steps:
       - pwd
 workflow:
+  version: 2
   feature-branch-only:
     jobs:
       filters:
