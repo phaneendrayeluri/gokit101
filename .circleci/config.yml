@@ -23,6 +23,8 @@ workflows:
     jobs:
       - build
       - whereami:
+          requires:
+            - build
           filters:
             branches: 
               ignore: /^(?!feature).*/
